@@ -25,6 +25,8 @@ from cytomine.models import UserCollection
 
 def main(argv):
     with CytomineJob.from_cli(argv) as cj:
+        cj.job.update(statusComment="Initialization...")
+
         users = UserCollection().fetch()
         print(users)
         for user in users:

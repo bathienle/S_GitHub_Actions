@@ -1,8 +1,8 @@
 {
-  "name": "",
-  "description": "",
+  "name": "GitHub_Actions",
+  "description": "Test GitHub actions for the replacement of auto-build Dockerhub feature",
   "container-image": {
-    "image": "",
+    "image": "bathienle/s_github_actions",
     "type": "singularity"
   },
   "command-line": "[CYTOMINE_HOST] [CYTOMINE_PUBLIC_KEY] [CYTOMINE_PRIVATE_KEY] [CYTOMINE_ID_PROJECT] [CYTOMINE_ID_SOFTWARE]",
@@ -53,6 +53,5 @@
       "type": "Number"
     }
   ],
-
   "schema-version": "cytomine-0.1"
 }

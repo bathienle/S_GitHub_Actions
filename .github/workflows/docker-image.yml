@@ -3,6 +3,7 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
+    tags: [ v* ]
   pull_request:
     branches: [ master ]
 
@@ -28,5 +29,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/s_github_actions:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/s_github_actions:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/s_github_actions:buildcache,mode=max

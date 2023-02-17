@@ -29,8 +29,6 @@ def main(argv):
 
         users = UserCollection().fetch()
         print(users)
-        for user in users:
-            print(user)
 
         cj.job.update(statusComment="Finished.")
 
